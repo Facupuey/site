@@ -1,0 +1,79 @@
+<!--meta {"page":"productos","title":"Productos","desc":"Catálogo de productos veterinarios Laboratorio Lamar para perros y gatos: antiinfecciosos, antiparasitarios, corticoides, hormonales, sistema nervioso, digestivo y respiratorio."}-->
+<!doctype html>
+<html lang="es">
+<head>
+  {{HEAD}}
+</head>
+<body class="page-productos">
+  {{SPLASH}}
+  {{HEADER}}
+
+  <main id="main">
+    <section class="page-hero page-hero-compact" aria-labelledby="page-title">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="kicker hero-fade">Productos</p>
+          <h1 class="page-title" id="page-title" data-split>{{COUNT_PRODUCTS}} productos para el cuidado de <em>perros y gatos</em>.</h1>
+        </div>
+        <p class="page-lead hero-fade">Filtrá por línea terapéutica o especie, o buscá por nombre. Cada ficha incluye descripción, presentación, indicaciones y dosificación.</p>
+      </div>
+    </section>
+
+    <section class="catalog" aria-label="Catálogo">
+      <div class="container">
+        <div class="catalog-toolbar" data-catalog-toolbar>
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <label class="sr-only" for="catalog-search">Buscar producto</label>
+            <input id="catalog-search" type="search" placeholder="Buscar por nombre, acción o línea…" autocomplete="off" data-catalog-search>
+          </div>
+          <div class="segmented" role="group" aria-label="Especie">
+            <button type="button" class="is-active" data-filter-especie="todas" aria-pressed="true">Todas</button>
+            <button type="button" data-filter-especie="perros" aria-pressed="false">Perros</button>
+            <button type="button" data-filter-especie="gatos" aria-pressed="false">Gatos</button>
+          </div>
+        </div>
+        <div class="chips" role="group" aria-label="Línea terapéutica">
+        {{LINE_FILTERS}}
+        </div>
+        <p class="catalog-count" aria-live="polite" data-catalog-count>Mostrando {{COUNT_PRODUCTS}} productos</p>
+        {{PRODUCT_GRID}}
+        <p class="catalog-empty" data-catalog-empty hidden>No encontramos productos con esos filtros. <button type="button" class="link-btn" data-catalog-reset>Ver todos</button></p>
+      </div>
+    </section>
+
+    <section class="vd-band vd-band-compact" aria-labelledby="vd-band-title">
+      <div class="container vd-band-grid">
+        <div>
+          <h2 class="section-title" id="vd-band-title">¿Necesitás el vademécum completo?</h2>
+          <p>Todas las fichas técnicas en un solo documento, listo para imprimir.</p>
+        </div>
+        <div class="vd-band-actions">
+          <a class="btn btn-light" href="vademecum.html">Leer en línea <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline-light" href="assets/docs/vademecum-lamar.pdf" download>Descargar PDF</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="product-dialog" data-product-dialog aria-labelledby="pd-title">
+    <div class="pd-inner">
+      <button class="pd-close" type="button" data-dialog-close><span class="sr-only">Cerrar</span><span aria-hidden="true">×</span></button>
+      <div class="pd-pack" data-pd-pack></div>
+      <div class="pd-content">
+        <p class="kicker" data-pd-line></p>
+        <h2 id="pd-title" data-pd-title></h2>
+        <p class="pd-meta" data-pd-meta></p>
+        <dl class="vd-fields" data-pd-fields></dl>
+        <div class="pd-actions">
+          <a class="btn btn-primary btn-sm" href="vademecum.html" data-pd-link>Ver en el vademécum</a>
+          <a class="btn btn-ghost btn-sm" href="contacto.html">Hacer una consulta</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  {{FOOTER}}
+  {{SCRIPTS}}
+</body>
+</html>

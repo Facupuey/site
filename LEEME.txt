@@ -1,0 +1,45 @@
+LABORATORIO LAMAR — CÓMO SUBIR LA WEB A HOSTINGER
+=================================================
+
+PASO 1 — SUBIR
+  1. Hostinger > Archivos > Administrador de archivos.
+     - Para PROBAR sin tocar la web actual: crear antes un subdominio
+       (Dominios > Subdominios, ej. "nueva") y entrar a su carpeta.
+     - Para PUBLICAR DEFINITIVO: entrar a public_html (bajar antes una copia
+       de lo que hay, y después borrar los archivos viejos).
+  2. Subir el archivo "lamar-web-hostinger.zip".
+  3. Clic derecho sobre el zip > "Extraer" (Extract) en esa misma carpeta.
+  4. Borrar el zip del servidor.
+  Tiene que quedar index.html directamente dentro de la carpeta (no dentro
+  de otra subcarpeta). El archivo ".htaccess" viene incluido.
+
+PASO 1B — CONFIGURAR EL EMAIL DE LOS FORMULARIOS (en el mismo Hostinger)
+  Clic derecho sobre "enviar.php" > Editar, y cambiar estas dos líneas
+  (están al principio del archivo):
+    $DESTINO   = 'info@laboratoriolamar.com';  -> el email donde quieren recibir
+                                                  consultas, solicitudes y CVs
+    $REMITENTE = 'web@laboratoriolamar.com';   -> una casilla que EXISTA en
+                                                  Hostinger con el dominio del cliente
+  Si la casilla web@ no existe, crearla en Hostinger > Emails, o poner otra
+  casilla existente del mismo dominio (si no, los mails pueden no llegar).
+  Guardar.
+
+PASO 2 — COMPROBAR
+  - Abrir la web en el celular y en la compu.
+  - Mandar un mensaje de prueba desde Contacto y ver que llegue el mail.
+  - Si el candado (https) no aparece: Hostinger > Seguridad > SSL > instalar.
+    Cuando ya funcione con https, en .htaccess se puede activar el bloque
+    "HTTPS redirect" (quitando los # de esas 5 líneas).
+
+QUÉ INCLUYE
+  index.html, empresa.html, productos.html, vademecum.html,
+  distribuidores.html, trabaja-con-nosotros.html, contacto.html,
+  creditos.html, 404.html (página de error), enviar.php (formularios),
+  assets/docs/vademecum-lamar.pdf (vademécum descargable),
+  sitemap.xml y robots.txt (para Google).
+  Las direcciones de la web vieja (la_empresa.html, antibioticos.html, etc.)
+  redirigen solas a las páginas nuevas.
+
+EDITAR PRODUCTOS (técnico)
+  En la carpeta de trabajo "tools": products-raw.json (textos) y catalog.js
+  (organización). Después:  node tools/build.js  y regenerar el PDF.

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-20 -10 300 327">
+  <defs>
+    <mask id="m" maskUnits="userSpaceOnUse" x="-20" y="-10" width="300" height="327">
+      <path d="M130 8 L252 80 L252 227 L130 299 L8 227 L8 80 Z" fill="#fff" stroke="#fff" stroke-width="16" stroke-linejoin="round"/>
+      <polyline points="97,47 -23,118 20,164" fill="none" stroke="#000" stroke-width="12"/>
+      <polyline points="137,59 13,132 65,210" fill="none" stroke="#000" stroke-width="12"/>
+    </mask>
+  </defs>
+  <rect x="-20" y="-10" width="300" height="327" fill="#5E3F5A" mask="url(#m)"/>
+</svg>

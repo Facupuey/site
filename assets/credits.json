@@ -1,0 +1,51 @@
+[
+ {
+  "file": "assets/img/perro.webp",
+  "title": "Golden Retriever puppy",
+  "creator": null,
+  "license": "CC BY-SA 3.0",
+  "source": "https://commons.wikimedia.org/w/index.php?curid=530232"
+ },
+ {
+  "file": "assets/img/gato.webp",
+  "title": "BEN Bengalian kitten (4492540155)",
+  "creator": "Nickolas Titkov from Moscow, Russian Federation",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/w/index.php?curid=45267619"
+ },
+ {
+  "file": "assets/img/laboratorio-vidrio.webp",
+  "title": "File:Verrerie-p1030896.jpg",
+  "creator": "Rama",
+  "license": "CC BY-SA 2.0",
+  "source": "https://commons.wikimedia.org/w/index.php?curid=638807"
+ },
+ {
+  "file": "assets/img/veterinaria.webp",
+  "title": "Free yorkshire terrier dog held",
+  "creator": null,
+  "license": "CC CC0 1.0",
+  "source": "https://www.rawpixel.com/image/5925163/photo-image-background-public-domain-dog"
+ },
+ {
+  "file": "assets/img/perro-gato.webp",
+  "title": "Dog Cat",
+  "creator": "Krista Mangulsone",
+  "license": "CC CC0 1.0",
+  "source": "https://stocksnap.io/photo/dog-cat-YNI4E0XAAS"
+ },
+ {
+  "file": "assets/img/mockup-frasco.webp",
+  "title": "Mockup de packaging — Manual de identidad Lamar",
+  "creator": "Laboratorio Lamar",
+  "license": "Propio",
+  "source": ""
+ },
+ {
+  "file": "assets/img/mockup-cartel.webp",
+  "title": "Mockup de señalética — Manual de identidad Lamar",
+  "creator": "Laboratorio Lamar",
+  "license": "Propio",
+  "source": ""
+ }
+]

@@ -1,0 +1,118 @@
+<!--meta {"page":"distribuidores","title":"Distribuidores","desc":"Distribuí los productos veterinarios de Laboratorio Lamar en tu zona. Completá el formulario y nuestro equipo comercial se pondrá en contacto."}-->
+<!doctype html>
+<html lang="es">
+<head>
+  {{HEAD}}
+</head>
+<body class="page-form">
+  {{SPLASH}}
+  {{HEADER}}
+
+  <main id="main">
+    <section class="page-hero page-hero-compact" aria-labelledby="page-title">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="kicker hero-fade">Distribuidores</p>
+          <h1 class="page-title" id="page-title" data-split>Llevemos juntos los productos Lamar <em>a todo el país</em>.</h1>
+        </div>
+        <p class="page-lead hero-fade">Si sos distribuidor, droguería veterinaria, pet shop o veterinaria y querés comercializar nuestros productos, dejanos tus datos. Nuestro equipo comercial te va a contactar.</p>
+      </div>
+    </section>
+
+    <section class="section form-section" aria-label="Formulario para distribuidores">
+      <div class="container form-layout">
+        <aside class="form-aside">
+          <ul class="benefits">
+            <li class="reveal">
+              <span class="benefit-num">01</span>
+              <div><h2>Portfolio completo</h2><p>{{COUNT_PRODUCTS}} productos en {{COUNT_LINES}} líneas terapéuticas para la clínica de pequeños animales.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="benefit-num">02</span>
+              <div><h2>Calidad asegurada</h2><p>Elaboración propia bajo estrictas normas de control de calidad.</p></div>
+            </li>
+            <li class="reveal">
+              <span class="benefit-num">03</span>
+              <div><h2>Trato directo</h2><p>Atención personalizada y precios razonables, con 40 años de trayectoria.</p></div>
+            </li>
+          </ul>
+          <figure class="form-aside-img reveal hex-mask">
+            <img src="assets/img/perro.webp" alt="Golden retriever recostado sobre el césped" width="1792" height="1200" loading="lazy" decoding="async">
+          </figure>
+        </aside>
+
+        <form class="form-card reveal" action="enviar.php" method="post" data-form novalidate>
+          <input type="hidden" name="formulario" value="distribuidor">
+          <div class="hp" aria-hidden="true"><label>No completar <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <h2 class="form-title">Solicitud de distribución</h2>
+          <fieldset>
+            <legend>Empresa</legend>
+            <div class="form-grid">
+              <div class="field field-full">
+                <label for="d-empresa">Razón social o nombre comercial *</label>
+                <input id="d-empresa" name="empresa" type="text" required autocomplete="organization">
+              </div>
+              <div class="field">
+                <label for="d-cuit">CUIT</label>
+                <input id="d-cuit" name="cuit" type="text" inputmode="numeric" placeholder="30-12345678-9">
+              </div>
+              <div class="field">
+                <label for="d-rubro">Rubro *</label>
+                <select id="d-rubro" name="rubro" required>
+                  <option value="">Seleccioná una opción</option>
+                  <option>Distribuidora</option>
+                  <option>Droguería veterinaria</option>
+                  <option>Veterinaria</option>
+                  <option>Pet shop</option>
+                  <option>Agropecuaria</option>
+                  <option>Otro</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="d-provincia">Provincia *</label>
+                <select id="d-provincia" name="provincia" required>
+                  <option value="">Seleccioná la provincia</option>
+                  <option>Buenos Aires</option><option>Ciudad Autónoma de Buenos Aires</option><option>Catamarca</option><option>Chaco</option><option>Chubut</option><option>Córdoba</option><option>Corrientes</option><option>Entre Ríos</option><option>Formosa</option><option>Jujuy</option><option>La Pampa</option><option>La Rioja</option><option>Mendoza</option><option>Misiones</option><option>Neuquén</option><option>Río Negro</option><option>Salta</option><option>San Juan</option><option>San Luis</option><option>Santa Cruz</option><option>Santa Fe</option><option>Santiago del Estero</option><option>Tierra del Fuego</option><option>Tucumán</option><option>Fuera de Argentina</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="d-localidad">Localidad *</label>
+                <input id="d-localidad" name="localidad" type="text" required autocomplete="address-level2">
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Contacto</legend>
+            <div class="form-grid">
+              <div class="field field-full">
+                <label for="d-nombre">Nombre y apellido *</label>
+                <input id="d-nombre" name="nombre" type="text" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="d-email">Email *</label>
+                <input id="d-email" name="email" type="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="d-tel">Teléfono *</label>
+                <input id="d-tel" name="telefono" type="tel" required autocomplete="tel">
+              </div>
+              <div class="field field-full">
+                <label for="d-msg">Contanos sobre tu empresa</label>
+                <textarea id="d-msg" name="mensaje" rows="4" placeholder="Zona de cobertura, clientes, productos de interés…"></textarea>
+              </div>
+            </div>
+          </fieldset>
+          <div class="form-foot">
+            <label class="check"><input type="checkbox" name="acepto" value="si" required> <span>Acepto que Laboratorio Lamar use estos datos para contactarme.</span></label>
+            <button class="btn btn-primary" type="submit">Enviar solicitud <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  {{FOOTER}}
+  {{SCRIPTS}}
+</body>
+</html>
