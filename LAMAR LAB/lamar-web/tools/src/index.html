@@ -1,0 +1,146 @@
+<!--meta {"page":"inicio","title":"Inicio","desc":"Laboratorio Lamar desarrolla y elabora medicamentos veterinarios para perros y gatos desde 1986. Antiinfecciosos, antiparasitarios, corticoides y más, con calidad asegurada."}-->
+<!doctype html>
+<html lang="es">
+<head>
+  {{HEAD}}
+  <link rel="preload" as="image" href="assets/img/mockup-frasco.webp" fetchpriority="high">
+</head>
+<body class="page-home">
+  {{SPLASH}}
+  {{HEADER}}
+
+  <main id="main">
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <svg class="hero-hex-bg" viewBox="0 0 260 307" aria-hidden="true" data-parallax="-60"><path d="M130 8 L252 80 L252 227 L130 299 L8 227 L8 80 Z"/></svg>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="kicker hero-kicker"><span class="kicker-dot" aria-hidden="true"></span>Laboratorio veterinario · Desde 1986</p>
+          <h1 class="hero-title" id="hero-title" data-split>Medicamentos confiables para <em>una vida mejor</em> de las mascotas.</h1>
+          <p class="hero-lead hero-fade">Desarrollamos y elaboramos en Argentina una línea completa de fármacos para perros y gatos, bajo estrictas normas de control de calidad.</p>
+          <div class="hero-actions hero-fade">
+            <a class="btn btn-primary" href="productos.html">Ver productos <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="vademecum.html">Consultar vademécum</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <div class="hero-frame">
+            <img src="assets/img/mockup-frasco.webp" alt="Frasco gotero y estuche de Amoxicilina con la nueva identidad de Laboratorio Lamar" width="2400" height="1350" fetchpriority="high" loading="eager" data-parallax="30">
+          </div>
+          <figcaption class="hero-badge">
+            <span class="hero-badge-num" data-count="{{COUNT_PRODUCTS}}">{{COUNT_PRODUCTS}}</span>
+            <span class="hero-badge-txt">productos en<br>{{COUNT_LINES}} líneas terapéuticas</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="container hero-facts">
+        <p><strong>Planta propia</strong> en San Fernando, Buenos Aires</p>
+        <p><strong>Normas internacionales</strong> de control de calidad</p>
+        <p><strong>Cobertura nacional</strong> a través de distribuidores</p>
+      </div>
+    </section>
+
+    {{MARQUEE}}
+
+    <!-- ============ NOSOTROS ============ -->
+    <section class="section about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <div class="hex-mask">
+            <img src="assets/img/mockup-cartel.webp" alt="Cartel de Laboratorio Lamar sobre una pared de ladrillo con enredaderas" width="2400" height="1350" loading="lazy" decoding="async">
+          </div>
+          <div class="about-media-small hex-mask">
+            <img src="assets/img/gato.webp" alt="Gato atigrado mirando a cámara" width="1800" height="1270" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="about-copy">
+          <p class="kicker reveal">Quiénes somos</p>
+          <h2 class="section-title" id="about-title" data-split>Una empresa familiar dedicada a la salud animal.</h2>
+          <p class="reveal">Laboratorio Lamar S.R.L. nace en 1986 en la Provincia de Buenos Aires con un objetivo claro: fabricar y distribuir productos que mejoren la salud y el bienestar de los animales de compañía.</p>
+          <p class="reveal">Nuestro compromiso con el sector veterinario se traduce en medicamentos de máxima calidad, seguridad y eficiencia, a precios razonables. Un equipo especializado y el trato personal con cada cliente sostienen nuestro crecimiento.</p>
+          <a class="link-arrow reveal" href="empresa.html">Conocé la empresa <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CIFRAS ============ -->
+    <section class="stats" aria-label="Lamar en cifras">
+      <div class="container stats-grid">
+        <div class="stat reveal"><span class="stat-num" data-count="1986" data-from="1950">1986</span><span class="stat-label">Año de fundación</span></div>
+        <div class="stat reveal" style="--d:80ms"><span class="stat-num" data-count="40">40</span><span class="stat-label">Años de trayectoria</span></div>
+        <div class="stat reveal" style="--d:160ms"><span class="stat-num" data-count="{{COUNT_PRODUCTS}}">{{COUNT_PRODUCTS}}</span><span class="stat-label">Productos en vademécum</span></div>
+        <div class="stat reveal" style="--d:240ms"><span class="stat-num" data-count="{{COUNT_LINES}}">{{COUNT_LINES}}</span><span class="stat-label">Líneas terapéuticas</span></div>
+      </div>
+    </section>
+
+    <!-- ============ LÍNEAS ============ -->
+    <section class="section lines" aria-labelledby="lines-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker reveal">Líneas terapéuticas</p>
+          <h2 class="section-title" id="lines-title" data-split>Prevenir y curar, con un portfolio completo.</h2>
+          <p class="section-lead reveal">Enfermedades infecciosas, parasitarias, metabólicas y carenciales: cada línea responde a una necesidad concreta de la clínica de pequeños animales.</p>
+        </div>
+        {{LINES_GRID}}
+      </div>
+    </section>
+
+    <!-- ============ DESTACADOS ============ -->
+    <section class="section featured" aria-labelledby="featured-title">
+      <div class="container">
+        <div class="section-head section-head-row">
+          <div>
+            <p class="kicker reveal">Productos</p>
+            <h2 class="section-title" id="featured-title" data-split>Algunos de nuestros productos.</h2>
+          </div>
+          <a class="btn btn-ghost reveal" href="productos.html">Ver los {{COUNT_PRODUCTS}} productos <span aria-hidden="true">→</span></a>
+        </div>
+        {{FEATURED}}
+      </div>
+    </section>
+
+    <!-- ============ VADEMÉCUM ============ -->
+    <section class="vd-band" aria-labelledby="vd-band-title">
+      <svg class="vd-band-hex" viewBox="0 0 260 307" aria-hidden="true" data-parallax="-40"><use href="#lamar-hex"/></svg>
+      <div class="container vd-band-grid">
+        <div>
+          <p class="kicker kicker-light reveal">Vademécum {{YEAR_UPDATE}}</p>
+          <h2 class="section-title" id="vd-band-title" data-split>Toda la información técnica, en un solo lugar.</h2>
+          <p class="reveal">Descripción, presentación, indicaciones y dosificación de cada producto. Leelo en línea o descargalo en PDF para tenerlo siempre a mano.</p>
+        </div>
+        <div class="vd-band-actions reveal">
+          <a class="btn btn-light" href="vademecum.html">Leer en línea <span aria-hidden="true">→</span></a>
+          <a class="btn btn-outline-light" href="assets/docs/vademecum-lamar.pdf" download>Descargar PDF</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRABAJEMOS ============ -->
+    <section class="section join" aria-label="Trabajemos juntos">
+      <div class="container join-grid">
+        <a class="join-card reveal" href="distribuidores.html">
+          <div class="join-img"><img src="assets/img/veterinaria.webp" alt="Veterinaria sosteniendo a un perro pequeño" width="1024" height="908" loading="lazy" decoding="async"></div>
+          <div class="join-body">
+            <p class="kicker">Distribuidores</p>
+            <h3>Llevá los productos Lamar a tu zona.</h3>
+            <p>Buscamos distribuidores, droguerías y veterinarias en todo el país.</p>
+            <span class="link-arrow">Quiero distribuir <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="join-card reveal" style="--d:100ms" href="trabaja-con-nosotros.html">
+          <div class="join-img"><img src="assets/img/laboratorio-vidrio.webp" alt="Balones de vidrio de laboratorio" width="1600" height="1200" loading="lazy" decoding="async"></div>
+          <div class="join-body">
+            <p class="kicker">Trabajá con nosotros</p>
+            <h3>Sumate a un equipo que cuida la salud animal.</h3>
+            <p>Producción, control de calidad, ventas y administración.</p>
+            <span class="link-arrow">Enviar mi CV <span aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  {{FOOTER}}
+  {{SCRIPTS}}
+</body>
+</html>

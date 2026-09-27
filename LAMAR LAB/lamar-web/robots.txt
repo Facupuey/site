@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /tools/
+Disallow: /enviar.php
+
+Sitemap: https://www.laboratoriolamar.com/sitemap.xml

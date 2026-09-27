@@ -1,0 +1,69 @@
+<!--meta {"page":"vademecum","title":"Vademécum","desc":"Vademécum Laboratorio Lamar: fichas técnicas completas de todos los productos veterinarios, con descripción, presentación, indicaciones y dosificación. Descargable en PDF."}-->
+<!doctype html>
+<html lang="es">
+<head>
+  {{HEAD}}
+</head>
+<body class="page-vademecum">
+  {{SPLASH}}
+  {{HEADER}}
+
+  <main id="main">
+    <!-- Portada solo para impresión / PDF -->
+    <section class="print-cover" aria-hidden="true">
+      <div class="print-cover-top">
+        <svg class="print-cover-hex" viewBox="0 0 260 307"><defs><clipPath id="pc-clip"><path d="M130 0 L260 77 L260 230 L130 307 L0 230 L0 77 Z"/></clipPath></defs><g clip-path="url(#pc-clip)"><path d="M130 8 L252 80 L252 227 L130 299 L8 227 L8 80 Z" fill="#CCCCCC" stroke="#CCCCCC" stroke-width="16" stroke-linejoin="round"/><polyline points="97,47 -23,118 20,164" fill="none" stroke="#5E3F5A" stroke-width="10"/><polyline points="137,59 13,132 65,210" fill="none" stroke="#5E3F5A" stroke-width="10"/></g></svg>
+      </div>
+      <div class="print-cover-body">
+        <p class="print-cover-kicker">Laboratorio Lamar S.R.L.</p>
+        <p class="print-cover-title">Vademécum</p>
+        <p class="print-cover-sub">Medicamentos veterinarios para perros y gatos · {{YEAR_UPDATE}}</p>
+        <p class="print-cover-foot">Monteagudo 2113, San Fernando, Buenos Aires, Argentina · +54 11 4714-4423 / 4856 · www.laboratoriolamar.com</p>
+      </div>
+    </section>
+
+    <section class="page-hero page-hero-compact vd-hero" aria-labelledby="page-title">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="kicker hero-fade">Vademécum · {{YEAR_UPDATE}}</p>
+          <h1 class="page-title" id="page-title" data-split>Fichas técnicas <em>completas</em>.</h1>
+        </div>
+        <div class="vd-hero-side hero-fade">
+          <p class="page-lead">{{COUNT_PRODUCTS}} productos ordenados por línea terapéutica. Leelo acá o descargalo para consultarlo sin conexión.</p>
+          <div class="vd-hero-actions">
+            <a class="btn btn-primary" href="assets/docs/vademecum-lamar.pdf" download>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>
+              Descargar PDF
+            </a>
+            <button class="btn btn-ghost" type="button" data-print>Imprimir</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container vd-layout">
+      <aside class="vd-aside" aria-label="Índice del vademécum">
+        <div class="vd-aside-inner">
+          <div class="search-field search-field-sm">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <label class="sr-only" for="vd-search">Buscar en el vademécum</label>
+            <input id="vd-search" type="search" placeholder="Buscar producto…" autocomplete="off" data-vd-search>
+          </div>
+          <nav class="vd-index" data-vd-index>
+        {{VADEMECUM_INDEX}}
+          </nav>
+        </div>
+      </aside>
+
+      <div class="vd-content" data-vd-content>
+        <p class="vd-note">Productos de uso veterinario. La información de esta publicación está dirigida a profesionales; consulte siempre a su médico veterinario.</p>
+        {{VADEMECUM}}
+        <p class="catalog-empty" data-vd-empty hidden>No hay productos que coincidan con la búsqueda.</p>
+      </div>
+    </div>
+  </main>
+
+  {{FOOTER}}
+  {{SCRIPTS}}
+</body>
+</html>

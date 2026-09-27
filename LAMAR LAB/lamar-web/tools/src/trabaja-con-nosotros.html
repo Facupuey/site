@@ -1,0 +1,101 @@
+<!--meta {"page":"trabaja","title":"Trabajá con nosotros","desc":"Sumate al equipo de Laboratorio Lamar. Enviá tu CV para producción, control de calidad, ventas, administración o logística."}-->
+<!doctype html>
+<html lang="es">
+<head>
+  {{HEAD}}
+</head>
+<body class="page-form">
+  {{SPLASH}}
+  {{HEADER}}
+
+  <main id="main">
+    <section class="page-hero page-hero-compact" aria-labelledby="page-title">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="kicker hero-fade">Trabajá con nosotros</p>
+          <h1 class="page-title" id="page-title" data-split>Sumate a un equipo que cuida <em>la salud animal</em>.</h1>
+        </div>
+        <p class="page-lead hero-fade">Somos una empresa familiar con 40 años de trayectoria. Valoramos el compromiso, el trabajo prolijo y las ganas de aprender. Dejanos tu CV y lo tendremos en cuenta para futuras búsquedas.</p>
+      </div>
+    </section>
+
+    <section class="section form-section" aria-label="Formulario para enviar CV">
+      <div class="container form-layout">
+        <aside class="form-aside">
+          <h2 class="aside-title reveal">Áreas de trabajo</h2>
+          <ul class="areas reveal">
+            <li><span>Producción</span><small>Elaboración y acondicionamiento</small></li>
+            <li><span>Control de calidad</span><small>Análisis y aseguramiento</small></li>
+            <li><span>Ventas</span><small>Atención a clientes y distribuidores</small></li>
+            <li><span>Administración</span><small>Finanzas, compras y RR. HH.</small></li>
+            <li><span>Logística</span><small>Depósito y despacho</small></li>
+          </ul>
+          <figure class="form-aside-img reveal hex-mask">
+            <img src="assets/img/perro-gato.webp" alt="Un perro y un gato descansando juntos sobre el césped" width="960" height="565" loading="lazy" decoding="async">
+          </figure>
+        </aside>
+
+        <form class="form-card reveal" action="enviar.php" method="post" enctype="multipart/form-data" data-form novalidate>
+          <input type="hidden" name="formulario" value="cv">
+          <div class="hp" aria-hidden="true"><label>No completar <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+          <h2 class="form-title">Enviá tu CV</h2>
+          <div class="form-grid">
+            <div class="field field-full">
+              <label for="c-nombre">Nombre y apellido *</label>
+              <input id="c-nombre" name="nombre" type="text" required autocomplete="name">
+            </div>
+            <div class="field">
+              <label for="c-email">Email *</label>
+              <input id="c-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="c-tel">Teléfono *</label>
+              <input id="c-tel" name="telefono" type="tel" required autocomplete="tel">
+            </div>
+            <div class="field">
+              <label for="c-localidad">Localidad</label>
+              <input id="c-localidad" name="localidad" type="text" autocomplete="address-level2">
+            </div>
+            <div class="field">
+              <label for="c-area">Área de interés *</label>
+              <select id="c-area" name="area" required>
+                <option value="">Seleccioná un área</option>
+                <option>Producción</option>
+                <option>Control de calidad</option>
+                <option>Ventas</option>
+                <option>Administración</option>
+                <option>Logística</option>
+                <option>Otra</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="c-linkedin">Perfil de LinkedIn</label>
+              <input id="c-linkedin" name="linkedin" type="url" placeholder="https://www.linkedin.com/in/…">
+            </div>
+            <div class="field field-full">
+              <span class="label" id="c-cv-label">Currículum (PDF o Word, hasta 5 MB) *</span>
+              <label class="file-drop" data-file-drop>
+                <input id="c-cv" name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" required aria-labelledby="c-cv-label" data-max-mb="5">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 20h14"/></svg>
+                <span class="file-drop-text" data-file-name>Arrastrá tu archivo o <u>elegilo desde tu equipo</u></span>
+              </label>
+            </div>
+            <div class="field field-full">
+              <label for="c-msg">Mensaje</label>
+              <textarea id="c-msg" name="mensaje" rows="4" placeholder="Contanos brevemente sobre vos y tu experiencia."></textarea>
+            </div>
+          </div>
+          <div class="form-foot">
+            <label class="check"><input type="checkbox" name="acepto" value="si" required> <span>Acepto que Laboratorio Lamar guarde mi CV para procesos de selección.</span></label>
+            <button class="btn btn-primary" type="submit">Enviar CV <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  {{FOOTER}}
+  {{SCRIPTS}}
+</body>
+</html>
