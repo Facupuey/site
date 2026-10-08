@@ -41,14 +41,14 @@ if (!in_array($tipo, ['contacto', 'distribuidor', 'cv'], true)) $tipo = 'contact
 
 $campos = [
   'contacto'     => ['nombre' => 'Nombre', 'email' => 'Email', 'telefono' => 'Teléfono', 'asunto' => 'Motivo', 'mensaje' => 'Mensaje'],
-  'distribuidor' => ['empresa' => 'Empresa', 'cuit' => 'CUIT', 'rubro' => 'Rubro', 'provincia' => 'Provincia', 'localidad' => 'Localidad',
+  'distribuidor' => ['empresa' => 'Empresa', 'cuit' => 'CUIT', 'provincia' => 'Provincia', 'localidad' => 'Localidad',
                      'nombre' => 'Contacto', 'email' => 'Email', 'telefono' => 'Teléfono', 'mensaje' => 'Mensaje'],
   'cv'           => ['nombre' => 'Nombre', 'email' => 'Email', 'telefono' => 'Teléfono', 'localidad' => 'Localidad', 'area' => 'Área de interés',
                      'linkedin' => 'LinkedIn', 'mensaje' => 'Mensaje'],
 ][$tipo];
 $requeridos = [
   'contacto'     => ['nombre', 'email', 'asunto', 'mensaje'],
-  'distribuidor' => ['empresa', 'rubro', 'provincia', 'localidad', 'nombre', 'email', 'telefono'],
+  'distribuidor' => ['empresa', 'provincia', 'localidad', 'nombre', 'email', 'telefono'],
   'cv'           => ['nombre', 'email', 'telefono', 'area'],
 ][$tipo];
 
@@ -80,7 +80,7 @@ $asuntoCod = '=?UTF-8?B?' . base64_encode($asunto) . '?=';
 // Adjunto (solo CV)
 $adjunto = null;
 if ($tipo === 'cv') {
-  if (empty($_FILES['cv']) || $_FILES['cv']['error'] !== UPLOAD_ERR_OK) responder(false, 'Adjuntá tu CV.');
+  if (empty($_FILES['cv']) || $_FILES['cv']['error'] !== UPLOAD_ERR_OK) responder(false, 'Adjunte su CV.');
   $f = $_FILES['cv'];
   if ($f['size'] > 5 * 1024 * 1024) responder(false, 'El archivo supera los 5 MB.');
   $ext = strtolower(pathinfo($f['name'], PATHINFO_EXTENSION));

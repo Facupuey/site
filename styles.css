@@ -632,7 +632,7 @@ body.nav-open { overflow: hidden; }
   .hero-grid { grid-template-columns: 1.02fr 1fr; gap: 3.5rem; }
   .hero { padding-bottom: 3rem; }
   .about-grid { grid-template-columns: 1fr 1.05fr; gap: 5rem; }
-  .lines-grid { grid-template-columns: repeat(4, 1fr); }
+  .lines-grid { grid-template-columns: repeat(5, 1fr); }
   .featured-row { grid-template-columns: repeat(4, 1fr); }
   .vd-band-grid { grid-template-columns: 1.4fr 1fr; }
   .vd-band-actions { justify-content: flex-end; }
@@ -715,3 +715,33 @@ body.nav-open { overflow: hidden; }
   .marquee-track { animation-duration: 120s; }
   .hero-hex-bg, .vd-band-hex { transform: none !important; }
 }
+
+/* ============ Íconos de especie (perros / gatos) ============ */
+.species { display: flex; flex-direction: column; gap: .55rem; }
+.sp { display: flex; flex-direction: column; align-items: center; gap: .25rem; }
+.sp-ico { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--mist); color: var(--white); }
+.sp-ico svg { width: 64%; height: 64%; }
+.sp-lbl { font-size: .58rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--text-soft); }
+.product-link { position: relative; }
+.product-link > .species { position: absolute; top: 1.1rem; left: 1.1rem; z-index: 1; }
+.species-inline { flex-direction: row; gap: .45rem; }
+.species-inline .sp { flex-direction: row; gap: .35rem; }
+.species-inline .sp-ico { width: 26px; height: 26px; }
+.featured-caption .species-inline { margin-bottom: .55rem; }
+.pd-pack { gap: 1.2rem; }
+.pd-pack .species-inline { justify-content: center; }
+@media (max-width: 539px) {
+  .product-link > .species { top: auto; bottom: .9rem; left: 1rem; flex-direction: row; gap: .35rem; }
+  .product-link > .species .sp-lbl { display: none; }
+  .product-link > .species .sp-ico { width: 30px; height: 30px; }
+  .product-link { padding-bottom: 3.4rem; }
+  .product-link .pack { margin-left: 0; }
+}
+@media (min-width: 540px) {
+  .product-link > .species { top: 1.9rem; left: 1.3rem; }
+  .product-link .pack { width: 62%; margin: .6rem 0 1.5rem auto; }
+}
+
+/* Vademécum en orden alfabético (sin categorías) */
+.vd-list { border-top: 2px solid var(--plum); }
+.vd-index-group h3 { font-family: var(--display); font-size: .95rem; letter-spacing: 0; text-transform: none; color: var(--plum); }

@@ -170,14 +170,30 @@
     if (!products.length || !$("[data-open-product]") || typeof HTMLDialogElement === "undefined") return;
     const dlg = ensureDialog();
     const byId = Object.fromEntries(products.map((p) => [p.id, p]));
+    const fichas = data.fichas || {};
+    const speciesHTML = (especie) => {
+      const list = especie === "ambos" ? ["perro", "gato"] : especie === "perros" ? ["perro"] : ["gato"];
+      return '<span class="species species-inline" aria-hidden="true">' + list.map((s) =>
+        '<span class="sp"><span class="sp-ico"><svg viewBox="0 0 64 64"><use href="#sp-' + s + '"/></svg></span><span class="sp-lbl">' +
+        (s === "perro" ? "Perros" : "Gatos") + "</span></span>").join("") + "</span>";
+    };
     const open = (p) => {
-      $("[data-pd-pack]", dlg).innerHTML = packHTML(p);
-      $("[data-pd-line]", dlg).textContent = p.lineName;
+      // La ficha técnica es compartida; la presentación es propia de cada producto.
+      let fields = (fichas[p.ficha] || []).slice();
+      if (Array.isArray(p.pres)) {
+        fields = fields.filter((f) => !/^(Presentación|Composición y presentaciones)$/.test(f.label));
+        if (p.pres.length) {
+          const at = Math.min(1, fields.length);
+          fields.splice(at, 0, { label: "Presentación", paras: p.pres });
+        }
+      }
+      $("[data-pd-pack]", dlg).innerHTML = speciesHTML(p.especie) + packHTML(p);
+      $("[data-pd-line]", dlg).textContent = p.forma || p.lineName;
       $("[data-pd-title]", dlg).textContent = p.name;
-      $("[data-pd-meta]", dlg).textContent = p.tipo + " · " + p.especie + " · " + p.formas.join(" · ");
-      $("[data-pd-fields]", dlg).innerHTML = p.fields.map((f) =>
+      $("[data-pd-meta]", dlg).textContent = p.tipo + " · " + p.especieTxt + " · " + p.formas.join(" · ");
+      $("[data-pd-fields]", dlg).innerHTML = fields.map((f) =>
         '<div class="vd-field"><dt>' + escHTML(f.label) + "</dt><dd>" + f.paras.map((x) => "<p>" + escHTML(x) + "</p>").join("") + "</dd></div>").join("");
-      $("[data-pd-link]", dlg).href = "vademecum.html#" + p.id;
+      $("[data-pd-link]", dlg).href = "vademecum.html#" + p.ficha;
       dlg.showModal();
       $(".pd-content", dlg).scrollTop = 0;
     };
@@ -299,25 +315,25 @@
   /* ---------- Formularios ---------- */
   const isPreview = location.protocol === "file:" || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
   const MSG = {
-    distribuidor: "¡Gracias! Recibimos tu solicitud. Nuestro equipo comercial se va a comunicar con vos a la brevedad.",
-    cv: "¡Gracias! Recibimos tu CV. Lo vamos a tener en cuenta en nuestras próximas búsquedas.",
-    contacto: "¡Gracias por escribirnos! Te respondemos a la brevedad.",
+    distribuidor: "¡Gracias! Recibimos su solicitud. Nuestro equipo comercial se comunicará con usted a la brevedad.",
+    cv: "¡Gracias! Recibimos su CV. Lo tendremos en cuenta en nuestras próximas búsquedas.",
+    contacto: "¡Gracias por escribirnos! Le responderemos a la brevedad.",
   };
 
   function validateField(el) {
     const field = el.closest(".field") || el.closest(".check");
     if (!field) return true;
     let msg = "";
-    if (el.type === "checkbox") { if (el.required && !el.checked) msg = "Necesitamos tu aceptación para continuar."; }
+    if (el.type === "checkbox") { if (el.required && !el.checked) msg = "Necesitamos su aceptación para continuar."; }
     else if (el.type === "file") {
       const f = el.files && el.files[0];
       const max = parseFloat(el.dataset.maxMb || "5");
-      if (el.required && !f) msg = "Adjuntá tu CV.";
+      if (el.required && !f) msg = "Adjunte su CV.";
       else if (f && !/\.(pdf|docx?)$/i.test(f.name)) msg = "El archivo debe ser PDF o Word.";
       else if (f && f.size > max * 1024 * 1024) msg = "El archivo supera los " + max + " MB.";
-    } else if (el.required && !el.value.trim()) msg = "Completá este campo.";
-    else if (el.type === "email" && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value)) msg = "Revisá el email.";
-    else if (el.type === "url" && el.value && !/^https?:\/\/\S+\.\S+/.test(el.value)) msg = "Ingresá una dirección completa (https://…).";
+    } else if (el.required && !el.value.trim()) msg = "Complete este campo.";
+    else if (el.type === "email" && el.value && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(el.value)) msg = "Revise el email.";
+    else if (el.type === "url" && el.value && !/^https?:\/\/\S+\.\S+/.test(el.value)) msg = "Ingrese una dirección completa (https://…).";
 
     field.classList.toggle("is-invalid", !!msg);
     el.setAttribute("aria-invalid", msg ? "true" : "false");
@@ -344,7 +360,7 @@
       const status = $("[data-form-status]", form);
       const kind = (form.querySelector('[name="formulario"]') || {}).value || "contacto";
       if (params.get("enviado") === "1") { status.className = "form-status is-ok"; status.textContent = MSG[kind]; }
-      if (params.get("enviado") === "0") { status.className = "form-status is-error"; status.textContent = "No pudimos enviar el formulario. Probá de nuevo o llamanos al +54 11 4714-4423."; }
+      if (params.get("enviado") === "0") { status.className = "form-status is-error"; status.textContent = "No pudimos enviar el formulario. Intente nuevamente o llámenos al +54 11 4714-4423."; }
 
       const fields = $$("input:not([type=hidden]):not([name=website]), select, textarea", form);
       fields.forEach((el) => {
@@ -373,7 +389,7 @@
           const first = $(".is-invalid input, .is-invalid select, .is-invalid textarea", form);
           if (first) first.focus();
           status.className = "form-status is-error";
-          status.textContent = "Revisá los campos marcados.";
+          status.textContent = "Revise los campos marcados.";
           return;
         }
         const btn = $("button[type=submit]", form);
@@ -399,7 +415,7 @@
         } catch (err) {
           status.className = "form-status is-error";
           status.textContent = (err && err.message && !/^Error \d|Failed to fetch|NetworkError/.test(err.message) ? err.message + " " : "No pudimos enviar el formulario. ") +
-            "Probá de nuevo o llamanos al +54 11 4714-4423.";
+            "Intente nuevamente o llámenos al +54 11 4714-4423.";
         } finally {
           form.classList.remove("is-sending");
           btn.disabled = false;
