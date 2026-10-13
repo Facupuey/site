@@ -172,10 +172,9 @@
     const byId = Object.fromEntries(products.map((p) => [p.id, p]));
     const fichas = data.fichas || {};
     const speciesHTML = (especie) => {
-      const list = especie === "ambos" ? ["perro", "gato"] : especie === "perros" ? ["perro"] : ["gato"];
-      return '<span class="species species-inline" aria-hidden="true">' + list.map((s) =>
-        '<span class="sp"><span class="sp-ico"><svg viewBox="0 0 64 64"><use href="#sp-' + s + '"/></svg></span><span class="sp-lbl">' +
-        (s === "perro" ? "Perros" : "Gatos") + "</span></span>").join("") + "</span>";
+      const key = especie === "ambos" ? "ambos" : especie === "perros" ? "perro" : "gato";
+      return '<span class="species species-inline" aria-hidden="true"><span class="sp sp-' + key + '"><span class="sp-ico"><svg viewBox="0 0 ' + (key === "ambos" ? 182 : 100) + ' 72"><use href="#sp-' + key +
+        '"/></svg></span><span class="sp-lbl">' + (key === "ambos" ? "Perros y gatos" : key === "perro" ? "Perros" : "Gatos") + "</span></span></span>";
     };
     const open = (p) => {
       // La ficha técnica es compartida; la presentación es propia de cada producto.

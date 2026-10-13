@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&amp;display=swap">
-  <link rel="stylesheet" href="styles.css?v=20261013c">
+  <link rel="stylesheet" href="styles.css?v=20261013d">
   <script>document.documentElement.classList.add("js");try{if(!sessionStorage.getItem("lamar-splash")){document.documentElement.classList.add("show-splash");sessionStorage.setItem("lamar-splash","1")}}catch(e){}</script>
   <link rel="preload" as="image" href="assets/img/mockup-frasco.webp" fetchpriority="high">
 </head>
@@ -36,8 +36,9 @@
       <polyline points="97,47 -23,118 20,164" fill="none" stroke="#000" stroke-width="10"/>
       <polyline points="137,59 13,132 65,210" fill="none" stroke="#000" stroke-width="10"/>
     </mask>
-    <symbol id="sp-perro" viewBox="0 0 64 64"><g fill="currentColor"><path d="M20 14c-6-2-13 2-14 10-1 7 2 15 7 19 3 2 5 0 5-3l1-15c0-5 3-9 1-11z"/><path d="M44 14c6-2 13 2 14 10 1 7-2 15-7 19-3 2-5 0-5-3l-1-15c0-5-3-9-1-11z"/><path fill-rule="evenodd" d="M32 11c-9 0-14 6-14 15 0 6 1 10 3 14 2 5 5 12 11 12s9-7 11-12c2-4 3-8 3-14 0-9-5-15-14-15zM27 43a5 3.6 0 1 0 10 0a5 3.6 0 1 0-10 0z"/></g></symbol>
-    <symbol id="sp-gato" viewBox="0 0 64 64"><path fill="currentColor" d="M12 8 L26 20 Q32 18 38 20 L52 8 Q56 24 54 32 Q56 54 32 56 Q8 54 10 32 Q8 24 12 8 Z"/></symbol>
+    <symbol id="sp-perro" viewBox="0 0 100 72"><path fill="currentColor" d="M20 30C30 27 50 27 60 26C64 25 66 22 67 17C68 10 74 7 80 8C84 8.5 86 11 87 13L94 15C97 16 97 21 94 22L86 24C84 28 80 31 76 33C74 38 74 42 72 44L72 66C72 69 67 69 67 66L66 48L63 48L62 66C62 69 57 69 57 66L56 47C48 49 40 49 34 46L33 66C33 69 28 69 28 66L27 50L25 50L23 66C23 69 18 69 18 66L18 44C17 38 18 33 20 30Z"/><path d="M21 31C13 28 8 22 8 13" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round"/></symbol>
+    <symbol id="sp-gato" viewBox="0 0 100 72"><path fill="currentColor" d="M24 40C34 37 50 36 62 36C66 36 68 34 69 31C69 27 70 24 72 22L71 12L78 18.5C80 18 82 18 84 18.5L90 12L89 22C92 25 92 30 89 33C87 36 83 37 79 37C77 40 76 44 75 46L75 66C75 69 70 69 70 66L69 50L66 50L65 66C65 69 60 69 60 66L59 49C52 50 44 50 38 49L37 66C37 69 32 69 32 66L31 52L29 52L28 66C28 69 23 69 23 66L23 50C22 46 22 43 24 40Z"/><path d="M25 42C14 44 8 38 9 28C10 20 15 17 19 19" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/></symbol>
+    <symbol id="sp-ambos" viewBox="0 0 182 72"><use href="#sp-perro" width="100" height="72"/><use href="#sp-gato" x="96" y="11" width="85" height="61.2"/></symbol>
     <symbol id="lamar-hex" viewBox="0 0 260 307">
       <rect width="260" height="307" fill="currentColor" mask="url(#lamar-hex-mask)"/>
     </symbol>
@@ -255,7 +256,7 @@
             <span class="pack-foot">LABORATORIO_<b>Lamar</b></span>
           </span>
         </span>
-          <span class="featured-caption"><span class="species species-inline" role="img" aria-label="Para perros"><span class="sp"><span class="sp-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#sp-perro"/></svg></span><span class="sp-lbl" aria-hidden="true">Perros</span></span></span><span class="featured-name">Strong</span><span class="featured-tipo">Ver ficha técnica <span aria-hidden="true">→</span></span></span>
+          <span class="featured-caption"><span class="species species-inline" role="img" aria-label="Para perros"><span class="sp sp-perro"><span class="sp-ico"><svg viewBox="0 0 100 72" aria-hidden="true"><use href="#sp-perro"/></svg></span><span class="sp-lbl" aria-hidden="true">Perros</span></span></span><span class="featured-name">Strong</span><span class="featured-tipo">Ver ficha técnica <span aria-hidden="true">→</span></span></span>
         </a>
       </li>
       <li class="featured-item reveal" style="--d:90ms">
@@ -270,7 +271,7 @@
             <span class="pack-foot">LABORATORIO_<b>Lamar</b></span>
           </span>
         </span>
-          <span class="featured-caption"><span class="species species-inline" role="img" aria-label="Para perros y gatos"><span class="sp"><span class="sp-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#sp-perro"/></svg></span><span class="sp-lbl" aria-hidden="true">Perros</span></span><span class="sp"><span class="sp-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#sp-gato"/></svg></span><span class="sp-lbl" aria-hidden="true">Gatos</span></span></span><span class="featured-name">Sin Par</span><span class="featured-tipo">Ver ficha técnica <span aria-hidden="true">→</span></span></span>
+          <span class="featured-caption"><span class="species species-inline" role="img" aria-label="Para perros y gatos"><span class="sp sp-ambos"><span class="sp-ico"><svg viewBox="0 0 182 72" aria-hidden="true"><use href="#sp-ambos"/></svg></span><span class="sp-lbl" aria-hidden="true">Perros y gatos</span></span></span><span class="featured-name">Sin Par</span><span class="featured-tipo">Ver ficha técnica <span aria-hidden="true">→</span></span></span>
         </a>
       </li>
       <li class="featured-item reveal" style="--d:180ms">
@@ -285,7 +286,7 @@
             <span class="pack-foot">LABORATORIO_<b>Lamar</b></span>
           </span>
         </span>
-          <span class="featured-caption"><span class="species species-inline" role="img" aria-label="Para perros y gatos"><span class="sp"><span class="sp-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#sp-perro"/></svg></span><span class="sp-lbl" aria-hidden="true">Perros</span></span><span class="sp"><span class="sp-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#sp-gato"/></svg></span><span class="sp-lbl" aria-hidden="true">Gatos</span></span></span><span class="featured-name">Knock Out Multidosis</span><span class="featured-tipo">Ver ficha técnica <span aria-hidden="true">→</span></span></span>
+          <span class="featured-caption"><span class="species species-inline" role="img" aria-label="Para perros y gatos"><span class="sp sp-ambos"><span class="sp-ico"><svg viewBox="0 0 182 72" aria-hidden="true"><use href="#sp-ambos"/></svg></span><span class="sp-lbl" aria-hidden="true">Perros y gatos</span></span></span><span class="featured-name">Knock Out Multidosis</span><span class="featured-tipo">Ver ficha técnica <span aria-hidden="true">→</span></span></span>
         </a>
       </li>
       <li class="featured-item reveal" style="--d:270ms">
@@ -300,7 +301,7 @@
             <span class="pack-foot">LABORATORIO_<b>Lamar</b></span>
           </span>
         </span>
-          <span class="featured-caption"><span class="species species-inline" role="img" aria-label="Para perros"><span class="sp"><span class="sp-ico"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#sp-perro"/></svg></span><span class="sp-lbl" aria-hidden="true">Perros</span></span></span><span class="featured-name">T4 F</span><span class="featured-tipo">Ver ficha técnica <span aria-hidden="true">→</span></span></span>
+          <span class="featured-caption"><span class="species species-inline" role="img" aria-label="Para perros"><span class="sp sp-perro"><span class="sp-ico"><svg viewBox="0 0 100 72" aria-hidden="true"><use href="#sp-perro"/></svg></span><span class="sp-lbl" aria-hidden="true">Perros</span></span></span><span class="featured-name">T4 F</span><span class="featured-tipo">Ver ficha técnica <span aria-hidden="true">→</span></span></span>
         </a>
       </li>
     </ul>
@@ -386,7 +387,7 @@
   </footer>
   <script defer src="lib/gsap.min.js"></script>
   <script defer src="lib/ScrollTrigger.min.js"></script>
-  <script defer src="lib/manifest.js?v=20261013c"></script>
-  <script defer src="main.js?v=20261013c"></script>
+  <script defer src="lib/manifest.js?v=20261013d"></script>
+  <script defer src="main.js?v=20261013d"></script>
 </body>
 </html>
