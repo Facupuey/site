@@ -173,7 +173,7 @@
     const fichas = data.fichas || {};
     const speciesHTML = (especie) => {
       const key = especie === "ambos" ? "ambos" : especie === "perros" ? "perro" : "gato";
-      return '<span class="species species-inline" aria-hidden="true"><span class="sp sp-' + key + '"><span class="sp-ico"><svg viewBox="0 0 ' + (key === "ambos" ? 182 : 100) + ' 72"><use href="#sp-' + key +
+      return '<span class="species species-inline" aria-hidden="true"><span class="sp sp-' + key + '"><span class="sp-ico"><svg viewBox="' + ({ perro: "0 0 64 80", gato: "0 0 38 62", ambos: "0 0 102 80" })[key] + '"><use href="#sp-' + key +
         '"/></svg></span><span class="sp-lbl">' + (key === "ambos" ? "Perros y gatos" : key === "perro" ? "Perros" : "Gatos") + "</span></span></span>";
     };
     const open = (p) => {
