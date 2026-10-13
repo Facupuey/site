@@ -753,3 +753,7 @@ body.nav-open { overflow: hidden; }
 @media (max-width: 719px) {
   .chips { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); padding-right: 3rem; }
 }
+
+/* Presentaciones agrupadas en una misma tarjeta (Strong, Sin Par, Knock Out) */
+.product-sizes { display: flex; flex-wrap: wrap; gap: .35rem; margin-top: .15rem; }
+.product-sizes span { font-size: .72rem; font-weight: 600; color: var(--plum); border: 1px solid var(--lilac-soft, #BFB3CE); border-radius: 999px; padding: .15rem .55rem; line-height: 1.3; background: #fff; }
